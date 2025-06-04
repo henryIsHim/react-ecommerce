@@ -1,7 +1,9 @@
 import Home from '../pages/Home.jsx'
 import About from '../pages/About.jsx'
 import ProductDetail from '../pages/ProductDetail.jsx'
+import AdminProductList from '../pages/admin/AdminProductList.jsx'
 import Layout from '../components/Layout.jsx';
+import AdminLayout from '../components/AdminLayout.jsx';
 
 import {
     createBrowserRouter
@@ -22,8 +24,21 @@ const router = createBrowserRouter([{
         {
             path: "/products/:id",
             element: <ProductDetail />
+        },
+
+    ]
+},
+{
+    path: "/admin",
+    element: <AdminLayout />,
+    children: [
+        {
+            path: "",
+            element: <AdminProductList />
         }
     ]
-}]);
+}
+
+]);
 
 export default router;
