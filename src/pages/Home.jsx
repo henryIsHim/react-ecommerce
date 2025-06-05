@@ -1,32 +1,13 @@
 import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
+import useProducts from "../hooks/useProducts";
+import useCategories from "../hooks/useCategories";
 
 export default function Home() {
-  let [products, setProducts] = useState([]);
-  let [categories, setCategories] = useState([]);
-  let [search, setSearch] = useState("");
+  
+  let {products, search, setSearch} = useProducts();
 
-  let getProducts = async (search) => {
-    let res = await fetch('http://localhost:8000/api/products?name=' + search);
-    let data = await res.json()
-
-    setProducts(data.products)
-  }
-
-  let getCategories = async () => {
-    let res = await fetch('http://localhost:8000/api/categories');
-    let data = await res.json()
-    setCategories(data.categories)
-  }
-
-  useEffect(() => {
-    getProducts(search);
-    
-  }, [search])
-
-  useEffect(() => {
-    getCategories();
-  }, [])
+  let { categories } = useCategories();
 
   return (
     <div className="xl:px-32 sm:px-5 px-2">

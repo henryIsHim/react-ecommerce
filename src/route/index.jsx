@@ -2,6 +2,7 @@ import Home from '../pages/Home.jsx'
 import About from '../pages/About.jsx'
 import ProductDetail from '../pages/ProductDetail.jsx'
 import AdminProductList from '../pages/admin/AdminProductList.jsx'
+import AdminProductCreate from '../pages/admin/AdminProductCreate.jsx';
 import Layout from '../components/Layout.jsx';
 import AdminLayout from '../components/AdminLayout.jsx';
 
@@ -35,6 +36,10 @@ const router = createBrowserRouter([{
         {
             path: "",
             element: <AdminProductList />
+        },
+        {
+            path: "/admin/products/create",
+            element: <AdminProductCreate />
         }
     ]
 }
