@@ -9,7 +9,7 @@ export default function ProductDetail() {
   let { id } = useParams();
 
   let getProduct = async (id) => {
-    let res = await fetch(`http://localhost:8000/api/products/` + id);
+    let res = await fetch(`https://web-production-ed1b4.up.railway.app/api/products/` + id);
     let data = await res.json();
     setProduct(data.product);
   };

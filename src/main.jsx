@@ -5,7 +5,7 @@ import router from './route/index.jsx'
 import './index.css'
 import axios from 'axios'
 
-axios.defaults.baseURL = 'http://localhost:8000'
+axios.defaults.baseURL = 'https://web-production-ed1b4.up.railway.app'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
